@@ -3,12 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CRUMVVM.Views.MainView"
              xmlns:model="clr-namespace:CRUMVVM.Models"
+             xmlns:viewModel="clr-namespace:CRUMVVM.ViewModels"
+             x:DataType="viewModel:MainViewModel"
              Title="">
     <VerticalStackLayout Padding="10" Spacing="10">
-        <Button Text="Agregar Empleado" />
+        <Button Text="Agregar Empleado" Command="{Binding GoToAddEditViewCommand}"/>
 
         <Grid Margin="5,5,5,5" RowDefinitions="Auto" ColumnDefinitions="*,*,*">
-
             <Label Text="Nombre" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold"/>
             <Label Text="Direccion" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold"/>
             <Label Text="Email" Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold"/>
